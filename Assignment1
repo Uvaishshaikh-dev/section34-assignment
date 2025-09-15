@@ -1,1 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N, M;
+    cin >> N >> M;
+
+    int bestIndex = 0;      
+    int bestSum = -1;  
+
+    for (int i = 0; i < N; i++) {
+        int rowSum = 0;
+        int scores[1000]; 
+
+        for (int j = 0; j < M; j++) {
+            cin >> scores[j];
+            rowSum += scores[j];
+        }
+
+        if (rowSum > bestSum) {
+            bestSum = rowSum;
+            bestIndex = i;
+        }
+    }
+
+    cout << bestIndex << endl;
+    return 0;
+}
+
 
