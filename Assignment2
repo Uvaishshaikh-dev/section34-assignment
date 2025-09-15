@@ -45,3 +45,13 @@ int main() {
     cout << sum << endl;
     return 0;
 }
+
+Input
+Z
+3
+
+Output
+1 2 3 
+0 5 0 
+7 8 9 
+35
