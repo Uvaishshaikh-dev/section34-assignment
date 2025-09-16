@@ -1,0 +1,82 @@
+Problem Statement – Spiral Traversal of a 
+Matrix 
+In the Royal Garden of NumMatrix, the King wants to enjoy the flowers arranged in an N × M 
+rectangular layout. 
+He instructs his gardener to walk in a spiral path starting from the top-left corner: 
+1. Walk left to right along the top row. 
+2. Then walk top to bottom along the rightmost column. 
+3. Then walk right to left along the bottom row. 
+4. Then walk bottom to top along the leftmost column. 
+5. Continue the process inward until every element is visited. 
+Your task is to print the spiral order traversal of the given matrix. 
+Input Format 
+1. First line: Two integers N and M (rows and columns). 
+2. Next N × M integers: The elements of the matrix. 
+Output Format 
+● Print the matrix elements in spiral order traversal (space-separated). 
+Constraints 
+● 1 ≤ N, M ≤ 100 
+● 1 ≤ arr[i][j] ≤ 10^4
+
+CODE: 
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N, M;
+    cin >> N >> M;
+
+    int arr[100][100]; // max size as per constraints
+
+    // Input matrix
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            cin >> arr[i][j];
+        }
+    }
+
+    int top = 0, bottom = N - 1;
+    int left = 0, right = M - 1;
+
+    while (top <= bottom && left <= right) {
+        // 1. Left → Right (top row)
+        for (int j = left; j <= right; j++) {
+            cout << arr[top][j] << " ";
+        }
+        top++;
+
+        // 2. Top → Bottom (right column)
+        for (int i = top; i <= bottom; i++) {
+            cout << arr[i][right] << " ";
+        }
+        right--;
+
+        // 3. Right → Left (bottom row, check if still valid)
+        if (top <= bottom) {
+            for (int j = right; j >= left; j--) {
+                cout << arr[bottom][j] << " ";
+            }
+            bottom--;
+        }
+
+        // 4. Bottom → Top (left column, check if still valid)
+        if (left <= right) {
+            for (int i = bottom; i >= top; i--) {
+                cout << arr[i][left] << " ";
+            }
+            left++;
+        }
+    }
+
+    return 0;
+}
+
+Input 
+3 3 
+1 2 3 
+4 5 6 
+7 8 9 
+ 
+Output 
+1 2 3 6 9 8 7 4 5
