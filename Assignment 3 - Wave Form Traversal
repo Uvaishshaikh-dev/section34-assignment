@@ -26,16 +26,15 @@ int main() {
     int N, M;
     cin >> N >> M;
 
-    int arr[100][100]; // since N, M ≤ 100 as per constraints
+    int arr[100][100];
 
-    // Input matrix
+
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
             cin >> arr[i][j];
         }
     }
 
-    // Wave traversal
     for (int j = 0; j < M; j++) {
         if (j % 2 == 0) {
             // Top to Bottom
