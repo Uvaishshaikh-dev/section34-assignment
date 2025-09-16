@@ -1,0 +1,63 @@
+Problem Statement – Wave Form Traversal 
+In the kingdom of NumMatrix, the Royal Messenger must deliver letters by walking through the 
+castle halls. The castle is represented as an N × M matrix, where each room has a number. 
+The messenger follows a wave-like path: 
+● In the first column, he moves top to bottom. 
+● In the second column, he moves bottom to top. 
+● In the third column, again top to bottom. 
+● This continues for all columns. 
+Your task is to print the wave form traversal of the matrix. 
+Input Format 
+1. The first line contains two integers N and M – the number of rows and columns. 
+2. The next N × M numbers represent the matrix elements. 
+Output Format 
+● Print the elements of the matrix in wave order traversal (space-separated). 
+Constraints 
+● 1 ≤ N, M ≤ 100 
+ 
+● 1 ≤ arr[i][j] ≤ 10^4
+
+CODE :
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N, M;
+    cin >> N >> M;
+
+    int arr[100][100]; // since N, M ≤ 100 as per constraints
+
+    // Input matrix
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            cin >> arr[i][j];
+        }
+    }
+
+    // Wave traversal
+    for (int j = 0; j < M; j++) {
+        if (j % 2 == 0) {
+            // Top to Bottom
+            for (int i = 0; i < N; i++) {
+                cout << arr[i][j] << " ";
+            }
+        } else {
+            // Bottom to Top
+            for (int i = N - 1; i >= 0; i--) {
+                cout << arr[i][j] << " ";
+            }
+        }
+    }
+
+    return 0;
+}
+
+Input 
+3 4 
+1  2  3  4 
+5  6  7  8 
+9 10 11 12 
+ 
+Output 
+1 5 9 10 6 2 3 7 11 12 8 4
