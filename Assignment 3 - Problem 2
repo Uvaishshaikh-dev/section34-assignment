@@ -1,0 +1,60 @@
+Problem Statement – Transpose of a Matrix 
+In the Academy of NumMatrix, students are given a magical board represented as an N × M 
+matrix. 
+ The headmaster wants to flip the matrix along its main diagonal so that rows become columns 
+and columns become rows. 
+ This operation is called a Transpose. 
+Your task is to help the headmaster by printing the transpose of the given matrix. 
+Input Format 
+1. The first line contains two integers N and M – the number of rows and columns. 
+2. The next N × M numbers represent the matrix elements. 
+ 
+Output Format 
+● Print the transpose matrix (of size M × N). 
+ 
+Constraints 
+● 1 ≤ N, M ≤ 100 
+ 
+● 1 ≤ arr[i][j] ≤ 10^4
+
+
+
+CODE:
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N, M;
+    cin >> N >> M;
+
+    int arr[100][100]; // given constraints: max 100×100
+
+    // Input matrix
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            cin >> arr[i][j];
+        }
+    }
+
+    // Print transpose (M × N)
+    for (int j = 0; j < M; j++) {
+        for (int i = 0; i < N; i++) {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+Input 
+3 3 
+1 2 3 
+4 5 6 
+7 8 9 
+ 
+Output 
+1 4 7 
+2 5 8 
+3 6 9
