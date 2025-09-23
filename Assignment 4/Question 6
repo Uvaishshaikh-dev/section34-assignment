@@ -1,0 +1,29 @@
+6. The Traveler’s Steps (Climbing Stairs) 
+Story: 
+A traveler must climb a staircase with n magical steps. 
+He can climb 1 step or 2 steps at a time. 
+�
+�
+ Find the number of distinct ways to reach the top using recursion. 
+Input: 
+● Integer n. 
+Output: 
+● Number of ways to climb. 
+Constraints: 
+● 1 <= n <= 30
+
+CODE :
+#include <iostream>
+using namespace std;
+
+int climb(int n) {
+    if (n == 0 || n == 1) return 1;
+    return climb(n - 1) + climb(n - 2);
+}
+
+int main() {
+    int n;
+    cin >> n;
+    cout << climb(n);
+    return 0;
+}
