@@ -1,0 +1,29 @@
+7. The Princess’s Lock (Factorial) 
+Story: 
+The princess is locked behind n magical locks. 
+She can only unlock them in every possible order. 
+�
+�
+ How many ways can she open them? (factorial) 
+Input: 
+● Integer n. 
+Output: 
+● Factorial of n. 
+Constraints: 
+● 1 <= n <= 12
+
+CODE :
+#include <iostream>
+using namespace std;
+
+int factorial(int n) {
+    if (n == 1) return 1;
+    return n * factorial(n - 1);
+}
+
+int main() {
+    int n;
+    cin >> n;
+    cout << factorial(n);
+    return 0;
+}
