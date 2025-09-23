@@ -1,0 +1,36 @@
+5. The Treasure Boxes (Sum of Array) 
+Story: 
+A hero finds n treasure boxes, each with some coins. 
+He opens them one by one and counts the coins. 
+�
+�
+ Find the total coins using recursion. 
+Input: 
+● First line: integer n 
+● Second line: n integers (coins in each box). 
+Output: 
+● Sum of coins. 
+Constraints: 
+● 1 <= n <= 100 
+● 1 <= coins[i] <= 1000 
+
+
+CODE :
+#include <iostream>
+using namespace std;
+
+int sumCoins(int coins[], int index, int n) {
+    if (index == n) return 0;
+    return coins[index] + sumCoins(coins, index + 1, n);
+}
+
+int main() {
+    int n;
+    cin >> n;
+    int coins[n];
+    for (int i = 0; i < n; ++i) {
+        cin >> coins[i];
+    }
+    cout << sumCoins(coins, 0, n);
+    return 0;
+}
