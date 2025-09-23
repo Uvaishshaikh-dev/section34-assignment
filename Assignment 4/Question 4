@@ -1,0 +1,30 @@
+4. The Wizard’s Mirror (Reverse String) 
+Story: 
+The wizard’s mirror reverses any word spoken into it. 
+�
+�
+ Reverse a string using recursion. 
+Input: 
+● String s. 
+Output: 
+● Reversed string. 
+Constraints: 
+● 1 <= s.length <= 100 
+
+CODE :
+#include <iostream>
+using namespace std;
+
+void reverse(string &s, int start, int end) {
+    if (start >= end) return;
+    swap(s[start], s[end]);
+    reverseMirror(s, start + 1, end - 1);
+}
+
+int main() {
+    string s;
+    cin >> s;
+    reverse(s, 0, s.length() - 1);
+    cout << s;
+    return 0;
+}
