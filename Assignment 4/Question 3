@@ -1,0 +1,30 @@
+3. The King’s Treasury (Sum of First n Numbers) 
+Story: 
+The King of Numberia has n treasure chests. 
+Each chest contains exactly the same number of coins as its position. 
+(Chest 1 has 1 coin, Chest 2 has 2 coins, … Chest n has n coins). 
+�
+�
+ Find the total coins using recursion. 
+Input: 
+● Integer n. 
+Output: 
+● The sum of numbers from 1 to n. 
+Constraints: 
+● 1 <= n <= 10^4
+
+CODE: 
+#include <iostream>
+using namespace std;
+
+int treasure(int n) {
+    if (n == 1) return 1;
+    return n + treasureSum(n - 1);
+}
+
+int main() {
+    int n;
+    cin >> n;
+    cout << treasure(n);
+    return 0;
+}
