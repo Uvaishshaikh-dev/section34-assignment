@@ -1,0 +1,32 @@
+8 . The Rabbit’s Family (Fibonacci) 
+Story: 
+In a magical forest, rabbits grow as: 
+● Month 1 → 1 rabbit 
+● Month 2 → 1 rabbit 
+● From Month 3 → rabbits = sum of previous two months. 
+�
+�
+ Find number of rabbits after n months. 
+Input: 
+● Integer n. 
+Output: 
+● Fibonacci number at month n. 
+Constraints: 
+● 1 <= n <= 40
+
+CODE :
+
+#include <iostream>
+using namespace std;
+
+int rabbit(int n) {
+    if (n == 1 || n == 2) return 1;
+    return rabbit(n - 1) + rabbit(n - 2);
+}
+
+int main() {
+    int n;
+    cin >> n;
+    cout << rabbit(n);
+    return 0;
+}
