@@ -19,7 +19,7 @@ using namespace std;
 
 int treasure(int n) {
     if (n == 1) return 1;
-    return n + treasureSum(n - 1);
+    return n + treasure(n - 1);
 }
 
 int main() {
