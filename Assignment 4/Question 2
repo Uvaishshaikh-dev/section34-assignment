@@ -1,0 +1,30 @@
+2. The Echo in the Cave (Print n to 1) 
+Story: 
+Inside a magical cave, a traveler shouts a number n. 
+The echo answers back in descending order down to 1. 
+�
+�
+ Print numbers from n to 1 using recursion. 
+Input: 
+● Integer n. 
+Output: 
+● Numbers from n to 1 separated by space. 
+Constraints: 
+● 1 <= n <= 1000
+
+CODE:
+#include <iostream>
+using namespace std;
+
+void echo(int n) {
+    if (n < 1) return;
+    cout << n << " ";
+    echoBeats(n - 1);
+}
+
+int main() {
+    int n;
+    cin >> n;
+    echo(n);
+    return 0;
+}
