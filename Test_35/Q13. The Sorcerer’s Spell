@@ -1,0 +1,17 @@
+CODE:
+
+#include <iostream>
+using namespace std;
+
+void RS(string s){
+    if(s.length()==0) return;
+    char first = s[0];
+    RS(s.substr(1));
+    cout << first;
+}
+
+int main(){
+    string s;
+    cin >> s;
+    RS(s);
+}
